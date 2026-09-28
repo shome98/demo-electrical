@@ -8,6 +8,7 @@ import { ACPowerCalculator } from './components/CircuitModes/ACPowerCalculator';
 import { ComponentSandbox } from './components/CircuitModes/ComponentSandbox';
 import { ExportModal } from './components/ExportModal';
 import { PNJunctionPage } from './components/PNJunction/PNJunctionPage';
+import { SemiconductorPhysicsPage } from './components/SemiconductorPhysics/SemiconductorPhysicsPage';
 
 const OhmApp: React.FC = () => {
   // Default values matching exact reference image: V = 15.5 V, R = 12.5 Ω
@@ -100,6 +101,7 @@ export const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<OhmApp />} />
       <Route path="/pn-junction" element={<PNJunctionPage />} />
+      <Route path="/semiconductor-physics" element={<SemiconductorPhysicsPage />} />
     </Routes>
   );
 };

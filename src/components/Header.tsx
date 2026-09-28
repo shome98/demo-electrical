@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, Layers, Activity, Cpu, Download, RefreshCw, Atom } from 'lucide-react';
+import { Zap, Layers, Activity, Cpu, Download, RefreshCw, Atom, Sparkles } from 'lucide-react';
 
 export type AppMode = 'ohms_law' | 'series_parallel' | 'ac_power' | 'sandbox';
 
@@ -31,12 +31,12 @@ export const Header: React.FC<HeaderProps> = ({
               PRO v2.0
             </span>
           </h1>
-          <p className="text-xs text-gray-400 font-medium">Interactive Electrical & Physics Visualizer</p>
+          <p className="text-xs text-gray-400 font-medium">Interactive Electrical & Semiconductor Physics Visualizer</p>
         </div>
       </div>
 
       {/* Modes Navigation Tab Bar */}
-      <nav className="flex items-center bg-[#212226] p-1 rounded-xl border border-white/5 shadow-inner">
+      <nav className="flex items-center bg-[#212226] p-1 rounded-xl border border-white/5 shadow-inner flex-wrap">
         <button
           onClick={() => onModeChange('ohms_law')}
           className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
@@ -46,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Zap size={14} />
-          <span>Ohm's & Power Law</span>
+          <span>Ohm's Law</span>
         </button>
 
         <button
@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Layers size={14} />
-          <span>Series & Parallel</span>
+          <span>Series/Parallel</span>
         </button>
 
         <button
@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Activity size={14} />
-          <span>AC Power & Impedance</span>
+          <span>AC Power</span>
         </button>
 
         <button
@@ -85,13 +85,21 @@ export const Header: React.FC<HeaderProps> = ({
           <span>Sandbox</span>
         </button>
 
-        {/* PN Junction Route Link */}
+        {/* Physics Routes Links */}
+        <Link
+          to="/semiconductor-physics"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 transition-all cursor-pointer"
+        >
+          <Sparkles size={14} className="text-emerald-400" />
+          <span>Semiconductor Physics</span>
+        </Link>
+
         <Link
           to="/pn-junction"
-          className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-purple-300 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 transition-all cursor-pointer"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-purple-300 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 transition-all cursor-pointer"
         >
           <Atom size={14} className="text-purple-400" />
-          <span>PN Junction Demos</span>
+          <span>PN Junctions</span>
         </Link>
       </nav>
 
@@ -111,7 +119,7 @@ export const Header: React.FC<HeaderProps> = ({
           className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-md shadow-blue-500/20 transition-all active:scale-95 cursor-pointer"
         >
           <Download size={13} />
-          <span>Export Calculations</span>
+          <span>Export</span>
         </button>
       </div>
     </header>
