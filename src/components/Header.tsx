@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
               PRO v2.0
             </span>
           </h1>
-          <p className="text-xs text-gray-400 font-medium">Interactive Electrical & Semiconductor Physics Visualizer</p>
+          <p className="text-xs text-gray-400 font-medium">Interactive Electrical & Semiconductor Visualizer</p>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({
       <nav className="flex items-center bg-[#212226] p-1 rounded-xl border border-white/5 shadow-inner flex-wrap">
         <button
           onClick={() => onModeChange('ohms_law')}
-          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
             currentMode === 'ohms_law'
               ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
               : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         <button
           onClick={() => onModeChange('series_parallel')}
-          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
             currentMode === 'series_parallel'
               ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
               : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         <button
           onClick={() => onModeChange('ac_power')}
-          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
             currentMode === 'ac_power'
               ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
               : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         <button
           onClick={() => onModeChange('sandbox')}
-          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
             currentMode === 'sandbox'
               ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
               : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
@@ -85,13 +85,22 @@ export const Header: React.FC<HeaderProps> = ({
           <span>Sandbox</span>
         </button>
 
+        {/* Transistors Link */}
+        <Link
+          to="/transistors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 transition-all cursor-pointer"
+        >
+          <Cpu size={14} className="text-blue-400" />
+          <span>Transistors</span>
+        </Link>
+
         {/* Physics Routes Links */}
         <Link
           to="/semiconductor-physics"
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 transition-all cursor-pointer"
         >
           <Sparkles size={14} className="text-emerald-400" />
-          <span>Semiconductor Physics</span>
+          <span>Physics</span>
         </Link>
 
         <Link

@@ -9,6 +9,7 @@ import { ComponentSandbox } from './components/CircuitModes/ComponentSandbox';
 import { ExportModal } from './components/ExportModal';
 import { PNJunctionPage } from './components/PNJunction/PNJunctionPage';
 import { SemiconductorPhysicsPage } from './components/SemiconductorPhysics/SemiconductorPhysicsPage';
+import { TransistorsPage } from './components/Transistors/TransistorsPage';
 
 const OhmApp: React.FC = () => {
   // Default values matching exact reference image: V = 15.5 V, R = 12.5 Ω
@@ -102,6 +103,7 @@ export const App: React.FC = () => {
       <Route path="/" element={<OhmApp />} />
       <Route path="/pn-junction" element={<PNJunctionPage />} />
       <Route path="/semiconductor-physics" element={<SemiconductorPhysicsPage />} />
+      <Route path="/transistors" element={<TransistorsPage />} />
     </Routes>
   );
 };
