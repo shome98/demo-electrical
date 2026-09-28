@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Header, type AppMode } from './components/Header';
 import { FormulaPanel } from './components/FormulaPanel';
 import { CircuitCanvas } from './components/CircuitCanvas';
@@ -6,8 +7,9 @@ import { SeriesParallelCalculator } from './components/CircuitModes/SeriesParall
 import { ACPowerCalculator } from './components/CircuitModes/ACPowerCalculator';
 import { ComponentSandbox } from './components/CircuitModes/ComponentSandbox';
 import { ExportModal } from './components/ExportModal';
+import { PNJunctionPage } from './components/PNJunction/PNJunctionPage';
 
-export const App: React.FC = () => {
+const OhmApp: React.FC = () => {
   // Default values matching exact reference image: V = 15.5 V, R = 12.5 Ω
   const [voltage, setVoltage] = useState<number>(15.5);
   const [resistance, setResistance] = useState<number>(12.5);
@@ -90,6 +92,15 @@ export const App: React.FC = () => {
         power={power}
       />
     </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<OhmApp />} />
+      <Route path="/pn-junction" element={<PNJunctionPage />} />
+    </Routes>
   );
 };
 

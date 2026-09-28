@@ -1,5 +1,6 @@
 import React from 'react';
-import { Zap, Layers, Activity, Cpu, Download, RefreshCw } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Zap, Layers, Activity, Cpu, Download, RefreshCw, Atom } from 'lucide-react';
 
 export type AppMode = 'ohms_law' | 'series_parallel' | 'ac_power' | 'sandbox';
 
@@ -81,8 +82,17 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Cpu size={14} />
-          <span>Interactive Sandbox</span>
+          <span>Sandbox</span>
         </button>
+
+        {/* PN Junction Route Link */}
+        <Link
+          to="/pn-junction"
+          className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-purple-300 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 transition-all cursor-pointer"
+        >
+          <Atom size={14} className="text-purple-400" />
+          <span>PN Junction Demos</span>
+        </Link>
       </nav>
 
       {/* Action Buttons */}
